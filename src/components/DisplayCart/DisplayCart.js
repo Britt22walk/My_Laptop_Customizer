@@ -5,18 +5,17 @@ import Total from "../Total/Total";
 
 class DisplayCart extends Component {
   render() {
-    const { selected, cost } = this.props;
+    const { selected } = this.props;
     const summary = Object.keys(selected).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const selectedOption = selected[feature];
 
       return (
         <DisplaySelectedFeatures
-          featureHash={featureHash}
+          key={featureHash}
           feature={feature}
-          selectedOption={selectedOption.name}
           cost={selectedOption.cost}
-          key={selectedOption.name}
+          name={selectedOption.name}
         />
       );
     });

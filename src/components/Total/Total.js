@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { USCurrencyFormat } from "../../App";
+import "./Total.css";
 
 class Total extends Component {
   render() {
@@ -9,9 +10,9 @@ class Total extends Component {
       0
     );
     return (
-      <div className="summary__total">
-        <div className="summary__total__label">Total</div>
-        <div className="summary__total__value">
+      <div className="summary_total">
+        <div className="summary_total_label">Total</div>
+        <div className="summary_total_value">
           {USCurrencyFormat.format(total)}
         </div>
       </div>

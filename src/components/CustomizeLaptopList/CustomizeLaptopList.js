@@ -6,6 +6,7 @@ import slugify from "slugify";
 
 class CustomizeLaptopList extends Component {
   render() {
+    const { updateFeature, selected } = this.props;
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const options = this.props.features[feature].map((item) => {
@@ -15,8 +16,8 @@ class CustomizeLaptopList extends Component {
             itemHash={itemHash}
             feature={feature}
             item={item}
-            key={item.name}
-            selected={this.props.selected}
+            selected={selected}
+            updateFeature={updateFeature}
           />
         );
       });
